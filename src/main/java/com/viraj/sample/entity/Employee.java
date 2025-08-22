@@ -2,22 +2,11 @@ package com.viraj.sample.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
-
 @Data
-@Entity
-@Table(name = "EMPLOYEE")
 public class Employee {
 
-    @Id
-    @Column(name = "EMPLOYEE_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long employeeId;
-
-    @Column(name = "EMPLOYEE_NAME")
     private String employeeName;
-
-    @Column(name = "EMPLOYEE_DESCRIPTION")
     private String employeeDescription;
 
     public Employee() {
@@ -42,6 +31,14 @@ public class Employee {
 
     public void setEmployeeDescription(String employeeDescription) {
         this.employeeDescription = employeeDescription;
+    }
+
+    public long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(long employeeId) {
+        this.employeeId = employeeId;
     }
 
     @Override
